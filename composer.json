@@ -1,0 +1,17 @@
+{
+    "name": "cr0/blockchain",
+    "description": "Small blockchain arch",
+    "type": "project",
+    "autoload": {
+        "psr-4": {
+            "Cr0\\Blockchain\\": "src/"
+        }
+    },
+    "authors": [
+        {
+            "name": "Bruno Alves",
+            "email": "boteistem@gmail.com"
+        }
+    ],
+    "require": {}
+}
