@@ -20,6 +20,14 @@ class Block
     ) {
         $this->hash = $this->calculateHash();
     }
+    public function setIndex(int $i = 0){
+        $this->index = $i;
+        return $this;
+    }
+    public function setHash(){
+        $this->hash = $this->calculateHash();
+        return $this;
+    }
     /**
      * calculateHash
      *
@@ -34,9 +42,13 @@ class Block
                 $this->getIndex(),
                 $this->getTimeStamp(),
                 $this->getPreviousHash(),
-                $this->getData()
+                json_encode($this->getData())
             )
         );
+    }
+    public function setPreviosHash(string $hash){
+        $this->previousHash = $hash;
+        return $this;
     }
     /**
      * getPreviousHash
@@ -73,5 +85,13 @@ class Block
     public function getIndex(): int
     {
         return $this->index;
+    }    
+    /**
+     * getHash
+     *
+     * @return string
+     */
+    public function getHash(): string{
+        return $this->hash;
     }
 }
